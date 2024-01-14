@@ -1,0 +1,86 @@
+\RequirePackage{silence} % :-\
+    \WarningFilter{scrreprt}{Usage of package `titlesec'}
+    %\WarningFilter{scrreprt}{Activating an ugly workaround}
+    \WarningFilter{titlesec}{Non standard sectioning command detected}
+\documentclass[ openright,titlepage,numbers=noenddot,headinclude,%twoside, %1headlines,% letterpaper a4paper
+                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
+                ngerman,american,%
+                ]{scrreprt}
+
+%*************************************************************************
+% Note: Make all your adjustments in here
+%*************************************************************************
+\input{hdathesis-config}
+\input{classicthesis-config}
+
+%*************************************************************************
+% Bibliographies
+%*************************************************************************
+\addbibresource{bibliography.bib}
+
+%*************************************************************************
+% Hyphenation
+%*************************************************************************
+%\hyphenation{put special hyphenation here}
+
+%*************************************************************************
+% GO!GO!GO! MOVE IT!
+%*************************************************************************
+\begin{document}
+\frenchspacing
+\raggedbottom
+\selectlanguage{ngerman} % ngerman, american
+%\renewcommand*{\bibname}{new name}
+%\setbibpreamble{}
+\pagenumbering{roman}
+\pagestyle{plain}
+%*************************************************************************
+% Frontmatter
+%*************************************************************************
+\include{frontbackmatter/Titlepage}
+%\include{frontbackmatter/Titleback}
+%\cleardoublepage\include{frontbackmatter/Dedication}
+%\cleardoublepage\include{frontbackmatter/Foreword}
+\cleardoublepage\include{frontbackmatter/Declaration}
+\cleardoublepage\include{frontbackmatter/AbstractEN}
+\cleardoublepage\include{frontbackmatter/AbstractDE}
+%\cleardoublepage\include{frontbackmatter/Publications}
+%\cleardoublepage\include{frontbackmatter/Acknowledgments}
+\cleardoublepage\include{frontbackmatter/Contents}
+\cleardoublepage\include{frontbackmatter/Figures}
+%\cleardoublepage\include{frontbackmatter/Tables}
+%\cleardoublepage\include{frontbackmatter/Listings}
+\cleardoublepage\include{frontbackmatter/Acronyms}
+
+%*************************************************************************
+% Teil A
+%*************************************************************************
+\cleardoublepage
+\pagestyle{scrheadings}
+\pagenumbering{arabic}
+% Alwas use \cleardoublepage before \part{...}.
+\cleardoublepage
+\include{chapters/einleitung}
+
+\cleardoublepage
+\include{chapters/related_work}
+
+\cleardoublepage
+\include{chapters/background}
+
+\cleardoublepage
+\include{chapters/methodology}
+
+\cleardoublepage
+\include{chapters/conclusion}
+
+%*************************************************************************
+% Other Stuff in the Back
+%*************************************************************************
+\cleardoublepage\include{frontbackmatter/Bibliography}
+%*************************************************************************
+% Game Over: Restore, Restart, or Quit?
+%*************************************************************************
+\end{document}
+%*************************************************************************

@@ -1,0 +1,24 @@
+%*******************************************************
+% Acronyms
+%*******************************************************
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\refstepcounter{dummy}
+\pdfbookmark[1]{Abk\"{u}rzungsverzeichnis}{abk\"{u}rzungsverzeichnis}
+\markboth{\spacedlowsmallcaps{Abk\"{u}rzungsverzeichnis}}{\spacedlowsmallcaps{Abk\"{u}rzungsverzeichnis}}
+\chapter*{Abk\"{u}rzungsverzeichnis}
+
+% Insert your acronyms here
+\begin{acronym}[UML]
+  \acro{IoU}{Intersection over Union. Überlappung zwischen zwei Bounding Boxes.}
+  \acro{mAP@0.75}{Mean Average Precision zwischen Ground Truths und prognosizierte Bounding Boxes mit 75\% \acs{IoU}.}
+  \acro{mAP@0.5}{Mean Average Precision zwischen Ground Truths und prognosizierte Bounding Boxes mit 50\% \acs{IoU}.}
+  \acro{CNN}{Convolutional Neural Network}
+  \acro{FP}{False positive}
+  \acro{FN}{False negative}
+  \acro{MOT} {Multi-Object-Tracking}
+  \acro{MOTA}{Multi-Object-Tracking Accuracy}
+\end{acronym}
+
+\cleardoublepage
